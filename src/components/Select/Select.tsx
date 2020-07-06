@@ -9,6 +9,7 @@ import { Icon } from '../Icon'
 type Option = {
   label: string
   value: string
+  selected?: boolean
 }
 type Optgroup = {
   label: string
@@ -44,7 +45,7 @@ export const Select: FC<Props> = ({
         {options.map((option) => {
           if ('value' in option) {
             return (
-              <option key={option.value} value={option.value}>
+              <option key={option.value} value={option.value} selected={option.selected}>
                 {option.label}
               </option>
             )
@@ -55,7 +56,7 @@ export const Select: FC<Props> = ({
           return (
             <optgroup key={optgroup.label} label={optgroup.label}>
               {optgroup.options.map((o) => (
-                <option key={o.value} value={o.value}>
+                <option key={o.value} value={o.value} selected={o.selected}>
                   {o.label}
                 </option>
               ))}

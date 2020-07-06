@@ -103,6 +103,16 @@ storiesOf('Select', module).add('all', () => (
         ]}
       />
     </li>
+    <li>
+      <Text>selected</Text>
+      <Select
+        options={[
+          { label: 'apple', value: 'apple' },
+          { label: 'orange', value: 'orange', selected: true },
+          { label: 'banana', value: 'banana' },
+        ]}
+      />
+    </li>
   </List>
 ))
 
